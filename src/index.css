@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark elegant palette */
+    --background: 0 0% 6%;
+    --foreground: 40 20% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 20% 95%;
+
+    /* Golden/Amber accent */
+    --primary: 38 70% 50%;
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 38 60% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 38 70% 50%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --cream: 40 30% 92%;
+    --gold: 38 70% 50%;
+    --gold-light: 40 65% 60%;
+    --gold-dark: 35 75% 40%;
+    --charcoal: 0 0% 10%;
+    --charcoal-light: 0 0% 15%;
+    --forest: 150 25% 20%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38, 70%, 50%) 0%, hsl(35, 75%, 40%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(0, 0%, 6%) 0%, hsl(0, 0%, 10%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 0%, 0.3) 50%, hsla(0, 0%, 0%, 0.8) 100%);
+    
+    /* Shadows */
+    --shadow-gold: 0 4px 30px hsla(38, 70%, 50%, 0.15);
+    --shadow-elegant: 0 25px 50px -12px hsla(0, 0%, 0%, 0.5);
+
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+}
+
+@layer components {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .divider-gold {
+    @apply w-20 h-px mx-auto;
+    background: var(--gradient-gold);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
